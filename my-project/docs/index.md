@@ -1,17 +1,10 @@
-# Welcome to MkDocs
+# Portifólios Inteligência Artificial
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+|          Aluno           |   Matricula   |            Disciplina          |           Professor          |
+| ------------------------ | ------------- | ------------------------------ | ---------------------------- |
+|   Bruno Seiji Kishibe    |   200072854   |    Inteligência Artificial     |     Fabiano Araújo Soares    |
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Portifólio para a disciplina de Inteligência Artificial FGA0221 UnB, ministrada pelo professor Fabiano Araujo Soares.
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+As entregas de cada portifólio podem ser encontradas na barra lateral.
