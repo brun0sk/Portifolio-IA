@@ -6,7 +6,6 @@ def print_board(board):
     print()
 
 def is_winner(board, player):
-    "Verifica se o jogador atual venceu."
     # Linhas
     for row in board:
         if all(cell == player for cell in row):
@@ -21,11 +20,9 @@ def is_winner(board, player):
     return False
 
 def is_full(board):
-    "Verifica se o tabuleiro está cheio (empate)"
     return all(cell != " " for row in board for cell in row)
 
 def get_available_moves(board):
-    """Retorna as posições disponíveis no tabuleiro."""
     return [(r, c) for r in range(3) for c in range(3) if board[r][c] == " "]
 
 def alpha_beta_pruning(board, depth, alpha, beta, maximizing_player):
