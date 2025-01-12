@@ -732,6 +732,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#beam-search-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beam Search Algorithm
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -741,6 +750,15 @@
   <a href="#uso-de-algoritmo-de-busca-em-ia" class="md-nav__link">
     <span class="md-ellipsis">
       Uso de algoritmo de busca em IA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referências
     </span>
   </a>
   
@@ -828,6 +846,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#beam-search-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beam Search Algorithm
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -837,6 +864,15 @@
   <a href="#uso-de-algoritmo-de-busca-em-ia" class="md-nav__link">
     <span class="md-ellipsis">
       Uso de algoritmo de busca em IA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referências
     </span>
   </a>
   
@@ -861,7 +897,63 @@
 <p>Exemplos implementados dos algoritmos abaixo podem ser encontrados na sessão de <a href="../9.ProjetosProblemas/">Projetos Problemas</a>, assim como dos demais algoritmos citados anteriormente.</p>
 <h2 id="mais-algoritmos-de-busca">Mais algoritmos de busca</h2>
 <h3 id="busca-iterativa-em-profundidade-ids">Busca iterativa em profundidade (IDS)</h3>
+<p>A busca iterativa por profundidade(IDS) ou Iterative Deepening Depth-First Search (IDDFS) é um algoritmo que combina as buscas DFS e BFS. Entre suas vantagens podem ser citados:</p>
+<ul>
+<li>
+<p>Eficiência de Memória: O IDS utiliza DFS em cada iteração, consumindo muito menos memória do que BFS, sendo adequado para problemas com grandes espaços de busca.</p>
+</li>
+<li>
+<p>Otimidade em Grafos Não Ponderados: Garante encontrar o nó objetivo mais raso, sendo uma escolha ótima para certos problemas.</p>
+</li>
+<li>
+<p>Busca Completa: Assim como o BFS, assegura que, se houver uma solução, ela será encontrada, desde que o espaço de busca seja finito.</p>
+</li>
+<li>
+<p>Eficiente para Árvores Profundas: Encontra soluções em árvores profundas sem sobrecarregar a memória.</p>
+</li>
+</ul>
+<p>Já suas desvantagens são:</p>
+<ul>
+<li>
+<p>Esforço de Recomputação: O IDS reexplora repetidamente os mesmos nós à medida que o limite de profundidade aumenta, resultando em cálculos redundantes.</p>
+</li>
+<li>
+<p>Maior Complexidade de Tempo: Embora consuma pouca memória, sua complexidade de tempo é maior que a do DFS ou BFS, sendo O(bd)O(bd), onde bb é o fator de ramificação e dd a profundidade da solução.</p>
+</li>
+<li>
+<p>Ineficiente para Grafos Ponderados: Não funciona bem em grafos ponderados, pois considera a profundidade uniforme, e não o custo do caminho.</p>
+</li>
+</ul>
+<p>Um exemplo de IDS desenvolvido nesse portifolio pode ser encontrado nesse link <a href="https://github.com/brun0sk/Portifolio-IA/blob/main/codigos_python/IDDFs_cega.py">https://github.com/brun0sk/Portifolio-IA/blob/main/codigos_python/IDDFs_cega.py</a>.</p>
+<h3 id="beam-search-algorithm">Beam Search Algorithm</h3>
+<p>O Beam Search Algorithm é um algoritmo heuristico que utiliza um pouco da lógica da busca em largura (BFS) na construção de uma árvore de busca, gerando sucessores para cada nível.</p>
+<p>O Beam Search Algorithm pode ser dividido em:</p>
+<ul>
+<li>
+<p>Inicialização: Comece com o nó raiz e gere seus sucessores.</p>
+</li>
+<li>
+<p>Expansão de Nós: A partir dos nós atuais, gere sucessores e aplique a função heurística para avaliá-los.</p>
+</li>
+<li>
+<p>Seleção: Selecione os melhores nós com base nos valores heurísticos. Esses nós selecionados formarão o próximo nível a ser explorado.</p>
+</li>
+<li>
+<p>Iteração: Repita o processo de expansão e seleção para o novo nível de nós até que o objetivo seja alcançado ou uma condição específica seja atendida (como um número máximo de níveis).</p>
+</li>
+<li>
+<p>Finalização: A busca termina quando o objetivo é encontrado ou quando não há mais nós disponíveis para expandir.</p>
+</li>
+</ul>
+<p>Um exempo de execução desse algoritmo feito para esse relatório pode ser encontrado no link <a href="https://github.com/brun0sk/Portifolio-IA/blob/main/codigos_python/beam_search_informada.py">https://github.com/brun0sk/Portifolio-IA/blob/main/codigos_python/beam_search_informada.py</a>.</p>
 <h2 id="uso-de-algoritmo-de-busca-em-ia">Uso de algoritmo de busca em IA</h2>
+<p>Entre os exemplos dos algoritmos de busca sendo utilizados em IA podemos citar a geração de textos com auxilio de algoritmos de busca.</p>
+<p>No artigo <a href="https://huggingface.co/blog/how-to-generate">"How to generate text: using different decoding methods for language generation with Transformers."</a> .</p>
+<p>Nos é mostrado como a utilização de algoritmos como a Busca Gananciosa e Beam Search são utilizados para prever qual combinação de palavras tem maior probabilidade de se integrar em uma sentença. No artigo é realizado um código com auxílio da biblioteca transformers, onde se é utilizado desses algoritmos para a criação de um gerador de respostas.</p>
+<h2 id="referencias">Referências</h2>
+<p>[1] GEEKSFORGEEKS. Iterative Deepening Search (IDS) in AI. Disponível em: https://www.geeksforgeeks.org/iterative-deepening-search-ids-in-ai/.</p>
+<p>[2] GEEKSFORGEEKS. Introduction to Beam Search Algorithm. Disponível em: https://www.geeksforgeeks.org/introduction-to-beam-search-algorithm/. </p>
+<p>[3] Platen, Patrick. How to Generate. Disponível em: https://huggingface.co/blog/how-to-generate. </p>
 
 
 
