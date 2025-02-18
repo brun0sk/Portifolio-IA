@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np  
 
 P_SPAM = 0.4  # 40% dos e-mails são spam
 P_NAO_SPAM = 1 - P_SPAM  # 60% não são spam
@@ -36,5 +36,5 @@ def calcular_probabilidade_spam(gratis, promocao, links):
     return P_SPAM_DADO_DADOS
 
 # Teste do modelo: e-mail com "grátis", "promoção" e "links"
-probabilidade = calcular_probabilidade_spam(gratis=1, promocao=1, links=1)
+probabilidade = calcular_probabilidade_spam(gratis=1, promocao=0, links=1)
 print(f"Probabilidade de ser SPAM: {probabilidade:.2%}")
