@@ -17,12 +17,11 @@ class FiltroKalman:
         return self.x
     
     def atualizar(self, z):
-        # Calcular o ganho de Kalman
         S = np.dot(np.dot(self.H, self.P), self.H.T) + self.R
         K = np.dot(np.dot(self.P, self.H.T), np.linalg.inv(S))
         
         # Atualizar a estimativa do estado e a matriz de covariância
-        y = z - np.dot(self.H, self.x)  # Erro de inovação
+        y = z - np.dot(self.H, self.x)
         self.x = self.x + np.dot(K, y)
         I = np.eye(self.P.shape[0])
         self.P = np.dot(np.dot(I - np.dot(K, self.H), self.P), (I - np.dot(K, self.H)).T) + np.dot(np.dot(K, self.R), K.T)
